@@ -1,16 +1,12 @@
 package play.quartz;
 
-import org.quartz.Job;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
+import org.quartz.*;
 
-public class HelloJob implements Job {
+public class HelloJob implements StatefulJob {
 
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
 
-        System.out.println("From job fire time: " + jobExecutionContext.getFireTime());
-        /*System.out.println("From job next fire time: " + jobExecutionContext.getNextFireTime());
-        System.out.println("From job scheduled next fire time: " + jobExecutionContext.getScheduledFireTime());*/
+        System.out.println("Hello job has been executed");
     }
 }
